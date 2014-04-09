@@ -11,7 +11,7 @@
         <li class="inline no-decoration"><%= link_to "#{post.title}", post_path(post)%> <span class="label purple"><%= post.user.name %></span></li>
         <p><%= post.content %></p>
         </ul>
-        <%= button_to 'Upvote', post_path(post, post => {votes: (post.votes + 1)}), :method => :patch, class: 'btn btn-primary' %>
+        <%= button_to 'Upvote', post_path(post, :params => {:post => {votes: (post.votes + 1)}}), :method => :patch, class: 'btn btn-primary' %>
 
       </div>
       <% end %>
